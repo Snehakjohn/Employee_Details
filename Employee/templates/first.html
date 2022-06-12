@@ -1,0 +1,54 @@
+
+<div class="container card">
+    <h1 style="color:#FDDB27FF; text-align:center; background:#00B1D2FF;">EMPLOYEES</h1>
+    <div class="card-body">
+        <style>  
+
+table {  
+  font-family: arial, sans-serif;  
+  border-collapse: collapse;  
+}  
+  
+td, th {  
+  border: 2px solid black;  
+  text-align: left;  
+  padding: 8px;  
+}  
+tr:nth-child(even) {  
+  background-color:white;  
+}  
+tr:nth-child(odd) {  
+  background-color: pink;  
+}  
+</style>  
+        <table class="table table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Photo</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Remarks</th>
+                
+            </tr>
+            {% for i in Employeess %}
+                <tr>
+                    <td>{{i.name}}</td>
+                    {% if i.image %}
+                    <td><img src="{{BASIC_DIR}}/{{image.image}}" width="120"></td>
+                    {% else %}
+                    <td><h3>no image</h3></td>
+                    {% endif %}
+                    <td>{{i.email}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.address}}</td>
+                    <td>{{i.remarks}}</td>
+                    
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+        
